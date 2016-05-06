@@ -29,62 +29,62 @@ The functions are as follows :
 
 ### **Functions :**
 
-`getUser($token)` : Get information about the owner of the access_token.
+- `getUser($token)` : Get information about the owner of the access_token.
 
-`searchUser($token, $query)` : Get a list of users matching the query.
+- `searchUser($token, $query)` : Get a list of users matching the query.
 >Example: `$search_user = $instagramAPI->searchUser($_SESSION['instagram_accesstoken'], 'username');`
 
-`getUserRecentMedia($token)` : Get the most recent media published by the owner of the access_token.
+- `getUserRecentMedia($token)` : Get the most recent media published by the owner of the access_token.
 
-`getMediaByShortcode($token, $media_code, $media_type)` : Get information about a media object. 
+- `getMediaByShortcode($token, $media_code, $media_type)` : Get information about a media object. 
 >Use the `$media_type` argument to differentiate between **image** and **video** media in the response.
 You will also receive the user_has_liked field which tells you whether the owner of the access_token has liked this media.
 A media object's shortcode can be found in its shortlink URL.
 An example shortlink is http://instagram.com/p/tsxp1hhQTG/. Its corresponding shortcode is **tsxp1hhQTG**.
 
-`getMediaByID($token, $media_id, $media_type)` :  Get information about a media object using its ID.
+- `getMediaByID($token, $media_id, $media_type)` :  Get information about a media object using its ID.
 >Use the `$media_type` argument to differentiate between image and video media in the response.
 You will also receive the user_has_liked field which tells you whether the owner of the access_token has liked this media.
 
-`searchMedia($token, $lat, $lng, $distance)` : Search for recent media in a given area.
+- `searchMedia($token, $lat, $lng, $distance)` : Search for recent media in a given area.
 
-`postComment($token, $media_id, $text)` : Create a comment on a media object.
+- `postComment($token, $media_id, $text)` : Create a comment on a media object.
 >Creating comment on a media object should be following these rules : 
 -The total length of the comment cannot exceed 300 characters.
 -The comment cannot contain more than 4 hashtags.
 -The comment cannot contain more than 1 URL.
 -The comment cannot consist of all capital letters.
 
-`getMediaComments($token, $media_id)` : Get a list of recent comments on a media object.
+- `getMediaComments($token, $media_id)` : Get a list of recent comments on a media object.
 
-`deleteComment($token, $media_id, $comment_id)` : Remove a comment either on the authenticated user's media object or authored by the authenticated user.
+- `deleteComment($token, $media_id, $comment_id)` : Remove a comment either on the authenticated user's media object or authored by the authenticated user.
 
-`getTagInfo($token, $tag_name)` : Get information about a tag object.
+- `getTagInfo($token, $tag_name)` : Get information about a tag object.
 
-`searchTag($token, $query)` : Search for tags by name.
+- `searchTag($token, $query)` : Search for tags by name.
 >The `$query` argument accepts A valid tag name without a leading (#). (eg. snowy, nofilter).
 
-`getRecentlyTaggedMedia($token, $tag_name, $count)` : Get a list of recently tagged media.
+- `getRecentlyTaggedMedia($token, $tag_name, $count)` : Get a list of recently tagged media.
 >The `$tag_name` argument accepts A valid tag name without a leading (#). (eg. snowy, nofilter).
 
-`getLikes($token, $media_id)` : Get a list of users who have liked this media.
+- `getLikes($token, $media_id)` : Get a list of users who have liked this media.
 
-`setLike($token, $media_id)` : Set a like on this media by the currently authenticated user.
+- `setLike($token, $media_id)` : Set a like on this media by the currently authenticated user.
 
-`deleteLike($token, $media_id)` : Remove a like on this media by the currently authenticated user.
+- `deleteLike($token, $media_id)` : Remove a like on this media by the currently authenticated user.
 
-`getFollows($token)` : Get the list of users this user follows.
+- `getFollows($token)` : Get the list of users this user follows.
 
-`getFollowedBy($token)` : Get the list of users this user is followed by.
+- `getFollowedBy($token)` : Get the list of users this user is followed by.
 
-`getRequestedBy($token)` :  List the users who have requested this user's permission to follow.
+- `getRequestedBy($token)` :  List the users who have requested this user's permission to follow.
 
-`getRelationShip($token, $user_id)` : Get information about a relationship to another user.
+- `getRelationShip($token, $user_id)` : Get information about a relationship to another user.
 >Relationships are expressed using the following terms in the response:
 -outgoing_status: Your relationship to the user. Can be **'follows'**, **'requested'**, **'none'**.
 -incoming_status: A user's relationship to you. Can be **'followed_by'**, **'requested_by'**, **'blocked_by_you'**, **'none'**.
 
-`changeRelationShip($token, $user_id, $action)` : Modify the relationship between the current user and the target user.
+- `changeRelationShip($token, $user_id, $action)` : Modify the relationship between the current user and the target user.
 >You need to include an `$action` parameter to specify the relationship action you want to perform.
 Valid actions are: **'follow'**, **'unfollow'**, **'approve'** or **'ignore'**.
 Relationships are expressed using the following terms in the response:
