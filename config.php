@@ -8,6 +8,7 @@
 
 define("CLIENT_ID","YOUR_CLIENT_ID");
 define("CLIENT_SECRET","YOUR_CLIENT_SECRET");
-define("REDIRECT_URI","YOUR_REDIRECT_URI");
+// you can change the callback php file name in the redirect uri, but first change the name of the source file.
+define("REDIRECT_URI","http://localhost/InstagramAPI/instagram_login_callback.php");
 session_start();
 ?>
