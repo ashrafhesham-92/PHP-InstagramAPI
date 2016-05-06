@@ -92,6 +92,7 @@ Relationships are expressed using the following terms in the response:
 -incoming_status: A user's relationship to you. Can be **'followed_by'**, **'requested_by'**, **'blocked_by_you'**, **'none'**.
 
 >NOTE that some functions like (`getFollows($token)` , `getLikes($token, $media_id)` ,...) may return **empty** results if your application is still in **SandBox** mode. Instagram will not give you access to get **non-sandbox** users data untill your application become live.
+
 ***
 The above functions are making most of Instagram API calls.
 The code and project structure are needing improvements and some development for sure.
