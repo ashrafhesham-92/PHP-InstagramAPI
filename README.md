@@ -1,5 +1,5 @@
 # PHP-InstagramAPI
-A PHP project for making Instagram API calls i a simple and documented way.
+A PHP project for making Instagram API calls in a simple and documented way.
 
 ### **Documentation**
 
