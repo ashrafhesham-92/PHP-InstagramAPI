@@ -47,7 +47,7 @@ if(isset($_GET['code']) && !empty($_GET['code']))
     // store the access token into the session
     $_SESSION['instagram_accesstoken'] = $access_token;
 
-    echo "Get User Information: <a href='get_user_info.php'>User Info</a><p/>";
+    echo "Get User Information: <a href='examples.php'>User Info</a><p/>";
 }
 else
 {

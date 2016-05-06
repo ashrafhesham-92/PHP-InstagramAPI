@@ -8,15 +8,6 @@
 
 class InstagramAPI
 {
-    private $client_id = null;
-    private $client_secret = null;
-
-    public function __construct($client_id, $client_secret)
-    {
-        $this->client_id = $client_id;
-        $this->client_secret = $client_secret;
-    }
-
     /**
      * @param $token
      * @return mixed|string
@@ -635,7 +626,7 @@ class InstagramAPI
      * -outgoing_status: Your relationship to the user. Can be 'follows', 'requested', 'none'.
      * -incoming_status: A user's relationship to you. Can be 'followed_by', 'requested_by', 'blocked_by_you', 'none'.
      */
-    public function changeRelationShip ($token, $user_id, $action)
+    public function changeRelationShip($token, $user_id, $action)
     {
         $params = array('access_token'=>$token, 'action'=>$action);
         $query_string = http_build_query($params);
