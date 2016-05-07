@@ -9,7 +9,7 @@ You should change the values of the constants with your own values to make the a
 > NOTE : The project contains file called **instagram_login_callback.php**, this file was my destination for the `REDIRECT_URI` and it contains some operations which i will talk about later.
 You should be using it in your `REDIRECT_URI`, or change its name and use it normaly.
 
-**index.php :** This file instantiates object of **InstagramService** class -which i will talk about later- which contains a functions that returns a **Login URL** which will be used for redirecting user to third party for authorization process to be completed.
+**index.php :** This file instantiates object of **InstagramService** class -which i will talk about later- which contains a function that returns a **Login URL** which will be used for redirecting user to third party for authorization process to be completed.
 >You will find a defined array called `$scopes`, you should use it for defining the scopes that user needs for doing specific operations, you can find full information about scopes in this page : [Instagram Login Permissions (Scopes)](https://www.instagram.com/developer/authorization/)
 
 **instagram_login_callback.php :** This file the landing file after user authorizes your application.
