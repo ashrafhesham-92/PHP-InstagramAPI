@@ -31,10 +31,16 @@ The functions are as follows :
 
 - `getUser($token)` : Get information about the owner of the access_token.
 
+- `getUserById($token, $user_id)` : Get information about a user using his ID.
+
 - `searchUser($token, $query)` : Get a list of users matching the query.
 >Example: `$search_user = $instagramAPI->searchUser($_SESSION['instagram_accesstoken'], 'username');`
 
-- `getUserRecentMedia($token)` : Get the most recent media published by the owner of the access_token.
+- `getRecentMedia($token, $count)` : Get the most recent media published by the owner of the access_token.
+
+- `getUserRecentMedia($token,$user_id, $count)` : Get the most recent media published by a user.
+
+- `getRecentLikedMedia($token, $count)` : Get the list of recent media liked by the owner of the access_token.
 
 - `getMediaByShortcode($token, $media_code, $media_type)` : Get information about a media object. 
 >Use the `$media_type` argument to differentiate between **image** and **video** media in the response.

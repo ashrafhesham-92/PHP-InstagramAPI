@@ -39,6 +39,36 @@ class InstagramAPI
 
     /**
      * @param $token
+     * @param $user_id
+     * @return mixed|string
+     *
+     * Get information about a user using his ID.
+     */
+    public function getUserById($token, $user_id)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/v1/users/$user_id/?access_token=$token");
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+
+        if($response === false)
+        {
+            $response = curl_error($ch);
+        }
+        else
+        {
+            $response = json_decode($response);
+        }
+
+        curl_close($ch);
+        return $response;
+    }
+    // end getUserById()
+
+    /**
+     * @param $token
      * @param $query
      * @return mixed|string
      *
@@ -73,10 +103,44 @@ class InstagramAPI
      *
      * Get the most recent media published by the owner of the access_token.
      */
-    public function getUserRecentMedia($token)
+    public function getRecentMedia($token, $count)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/v1/users/self/media/recent/?access_token=$token");
+        curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/v1/users/self/media/recent/?access_token=$token&count=$count");
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+
+        if($response === false)
+        {
+            $response = curl_error($ch);
+        }
+        else
+        {
+            $response = json_decode($response);
+        }
+
+        curl_close($ch);
+        return $response;
+    }
+    // end getRecentMedia()
+
+    /**
+     * @param $token
+     * @param $user_id
+     * @param $count
+     * @return mixed|string
+     *
+     * Get the most recent media published by a user.
+     */
+    public function getUserRecentMedia($token,$user_id, $count)
+    {
+        $params = array('access_token'=>$token, 'count'=>$count);
+        $query_string = http_build_query($params);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/v1/users/$user_id/media/recent/?$query_string");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -95,6 +159,39 @@ class InstagramAPI
         return $response;
     }
     // end getUserRecentMedia()
+
+    /**
+     * @param $token
+     * @param $count
+     * @return mixed|string
+     *
+     * Get the list of recent media liked by the owner of the access_token.
+     */
+    public function getRecentLikedMedia($token, $count)
+    {
+        $params = array('access_token'=>$token, 'count'=>$count);
+        $query_string = http_build_query($params);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.instagram.com/v1/users/self/media/liked?$query_string");
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+
+        if($response === false)
+        {
+            $response = curl_error($ch);
+        }
+        else
+        {
+            $response = json_decode($response);
+        }
+
+        curl_close($ch);
+        return $response;
+    }
+    // end getRecentLikedMedia()
 
     /**
      * @param $token
