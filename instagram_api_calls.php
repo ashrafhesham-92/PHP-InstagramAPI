@@ -134,7 +134,7 @@ class InstagramAPI
      *
      * Get the most recent media published by a user.
      */
-    public function getUserRecentMedia($token,$user_id, $count)
+            public function getUserRecentMedia($token,$user_id, $count)
     {
         $params = array('access_token'=>$token, 'count'=>$count);
         $query_string = http_build_query($params);

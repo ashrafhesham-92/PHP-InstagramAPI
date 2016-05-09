@@ -20,9 +20,19 @@ var_dump($user_info);
 echo "<p/>";
 
 //// get your recent media
-//$user_recent_media = $instagramAPI->getUserRecentMedia($_SESSION['instagram_accesstoken']);
+//recent_media = $instagramAPI->getRecentMedia($_SESSION['instagram_accesstoken'], 10);
 //
 //echo "<h3>Object Containing Your Recent Media</h3>";
+//var_dump(recent_media);
+//echo "<p/>";
+//
+////*** $user_recent_media->data[0]->id // this is for getting media id ***//
+//
+
+//// get a user recent media
+//$user_recent_media = $instagramAPI->getUserRecentMedia($_SESSION['instagram_accesstoken'], $user_id, 10);
+//
+//echo "<h3>Object Containing A User's Recent Media</h3>";
 //var_dump($user_recent_media);
 //echo "<p/>";
 //
