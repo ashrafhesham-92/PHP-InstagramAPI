@@ -167,7 +167,7 @@ class InstagramAPI
      *
      * Get the list of recent media liked by the owner of the access_token.
      */
-    public function getRecentLikedMedia($token, $count)
+    public function getRecentlyLikedMedia($token, $count)
     {
         $params = array('access_token'=>$token, 'count'=>$count);
         $query_string = http_build_query($params);
@@ -191,7 +191,7 @@ class InstagramAPI
         curl_close($ch);
         return $response;
     }
-    // end getRecentLikedMedia()
+    // end getRecentlyLikedMedia()
 
     /**
      * @param $token

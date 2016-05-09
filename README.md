@@ -40,7 +40,7 @@ The functions are as follows :
 
 - `getUserRecentMedia($token,$user_id, $count)` : Get the most recent media published by a user.
 
-- `getRecentLikedMedia($token, $count)` : Get the list of recent media liked by the owner of the access_token.
+- `getRecentlyLikedMedia($token, $count)` : Get the list of recent media liked by the owner of the access_token.
 
 - `getMediaByShortcode($token, $media_code, $media_type)` : Get information about a media object. 
 >Use the `$media_type` argument to differentiate between **image** and **video** media in the response.
