@@ -133,5 +133,11 @@ echo "<p/>";
 //echo "<h3>Object Containing People You're Followed By</h3>";
 //var_dump($get_followed_by);
 //echo "<p/>";
+//// get recently liked media
+//$get_recently_liked_media = $instagramAPI->getRecentlyLikedMedia($_SESSION['instagram_accesstoken'], $count);
+//
+//echo "<h3>Object Containing Your Recently Liked Media</h3>";
+//var_dump($get_recently_liked_media);
+//echo "<p/>";
 
 ?>

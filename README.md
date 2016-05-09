@@ -100,6 +100,10 @@ Relationships are expressed using the following terms in the response:
 >NOTE that some functions like (`getFollows($token)` , `getLikes($token, $media_id)` ,...) may return **empty** results if your application is still in **SandBox** mode. Instagram will not give you access to get **non-sandbox** users data untill your application become live.
 
 ***
+### **examples.php** : This file contains samples of API function calls, so it instantiates an object of **InstagramAPI** class and calls its different functions.
+>This file is just for logging the results of the functions after making the API calls and returning response objects.
+***
+
 The above functions are making most of Instagram API calls.
 The code and project structure are needing improvements and some development for sure.
 ***
